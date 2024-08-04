@@ -33,7 +33,9 @@ public class GetQuotesApplication {
 		try {
 			final ForsmaticApiGetQuotaResponse quote = formsmaticClient
 					.getQuoteResponse(forsmaticQueryBuilder.constructUrl(language));
-			System.out.println(quote.getQuoteText());
+			System.out.println("Quote: " + quote.getQuoteText());
+			System.out.println("By Author: " + quote.getQuoteAuthor());
+
 		} catch (IOException | InterruptedException | FailedRequestException e) {
 			e.printStackTrace();
 		}

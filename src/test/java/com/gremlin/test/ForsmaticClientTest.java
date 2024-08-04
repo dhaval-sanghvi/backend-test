@@ -63,5 +63,6 @@ public class ForsmaticClientTest {
 				.getQuoteResponse("https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en");
 
 		assertEquals(fromCodeResponse.getQuoteText(), "You should hire Me.");
+		assertEquals(fromCodeResponse.getQuoteAuthor(), "Dhaval S");
 	}
 }
