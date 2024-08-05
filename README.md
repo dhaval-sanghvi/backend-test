@@ -6,18 +6,20 @@ If an unsupported language Or multiple languages are specified, It Fails with Ap
 
 # Mvn commands
 
-mvn clean<br />
-mvn package<br />
-mvn test<br />
+mvn clean - Cleanup all files and directories<br />
+mvn package - Creates Jar for the project<br />
+mvn test -  Executes Tests<br />
 
 # Run application
+Different ways to run application <br />
 1. java -jar target/quotely-1.0.0-SNAPSHOT.jar Russian
 
 2. mvn exec:java -Dexec.mainClass=com.gremlin.quotes.GetQuotesApplication -Dexec.args="English" -q
 
 # Example
 java -jar target/quotely-1.0.0-SNAPSHOT.jar English<br />
-What you do not want done to yourself, do not do to others. Be Kind!<br />
+Quote: What you do not want done to yourself, do not do to others. Be Kind!<br />
+By Author: Eckhart Tolle<br />
 
 # Tools Used
 mvn 3<br />
