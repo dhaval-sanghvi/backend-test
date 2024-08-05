@@ -7,24 +7,24 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpRequest.Builder;
 import java.net.http.HttpResponse;
 import com.google.gson.Gson;
-import com.gremlin.quotes.data.ForsmaticApiGetQuotaResponse;
+import com.gremlin.quotes.data.ForismaticApiGetQuotaResponse;
 
-public class ForsmaticClient {
+public class ForismaticClient {
 
 	private final HttpClient client;
 	private final Gson gson;
 
-	public ForsmaticClient() {
+	public ForismaticClient() {
 		this.client = HttpClient.newBuilder().build();
 		this.gson = new Gson();
 	}
 	
-	public ForsmaticClient(HttpClient client) {
+	public ForismaticClient(HttpClient client) {
 		this.client = client;
 		this.gson = new Gson();
 	}
 
-	public ForsmaticApiGetQuotaResponse getQuoteResponse(final String url)
+	public ForismaticApiGetQuotaResponse getQuoteResponse(final String url)
 			throws IOException, InterruptedException, FailedRequestException {
 		final Builder buildURI = HttpRequest.newBuilder().uri(URI.create(url));
 		final HttpRequest httpRequest = buildURI.GET().build();
@@ -36,6 +36,6 @@ public class ForsmaticClient {
 			throw new FailedRequestException("Failure to get Quote");
 		}
 		
-		return gson.fromJson(response.body(), ForsmaticApiGetQuotaResponse.class);
+		return gson.fromJson(response.body(), ForismaticApiGetQuotaResponse.class);
 	}
 }

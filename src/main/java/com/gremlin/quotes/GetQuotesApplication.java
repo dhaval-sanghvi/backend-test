@@ -3,9 +3,9 @@ package com.gremlin.quotes;
 import java.io.IOException;
 
 import com.gremlin.quotes.client.FailedRequestException;
-import com.gremlin.quotes.client.ForsmaticClient;
-import com.gremlin.quotes.client.ForsmaticQueryBuilder;
-import com.gremlin.quotes.data.ForsmaticApiGetQuotaResponse;
+import com.gremlin.quotes.client.ForismaticClient;
+import com.gremlin.quotes.client.ForismaticQueryBuilder;
+import com.gremlin.quotes.data.ForismaticApiGetQuotaResponse;
 
 public class GetQuotesApplication {
 
@@ -14,7 +14,7 @@ public class GetQuotesApplication {
 
 	/**
 	 * 
-	 * Entry Point for getting quotes from Fosmatic API. English and Russian are the
+	 * Entry Point for getting quotes from Forismatic API. English and Russian are the
 	 * 2 supported quotes Expected Output - Quote in the selected Language *
 	 * 
 	 */
@@ -27,12 +27,12 @@ public class GetQuotesApplication {
 			System.exit(0);
 		}
 
-		final ForsmaticClient formsmaticClient = new ForsmaticClient();
-		final ForsmaticQueryBuilder forsmaticQueryBuilder = new ForsmaticQueryBuilder();
+		final ForismaticClient forismaticClient = new ForismaticClient();
+		final ForismaticQueryBuilder forismaticQueryBuilder = new ForismaticQueryBuilder();
 
 		try {
-			final ForsmaticApiGetQuotaResponse quote = formsmaticClient
-					.getQuoteResponse(forsmaticQueryBuilder.constructUrl(language));
+			final ForismaticApiGetQuotaResponse quote = forismaticClient
+					.getQuoteResponse(forismaticQueryBuilder.constructUrl(language));
 			System.out.println("Quote: " + quote.getQuoteText());
 			System.out.println("By Author: " + quote.getQuoteAuthor());
 

@@ -2,7 +2,7 @@ package com.gremlin.quotes.client;
 
 import com.gremlin.quotes.Language;
 
-public class ForsmaticQueryBuilder {
+public class ForismaticQueryBuilder {
 
 	private final static String BASE_URL = "https://api.forismatic.com/api/1.0/?";
 	private final static String REQ_PARAM_METHOD_NAME = "method";

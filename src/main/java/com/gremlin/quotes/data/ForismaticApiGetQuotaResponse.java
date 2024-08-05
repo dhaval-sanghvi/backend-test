@@ -1,6 +1,6 @@
 package com.gremlin.quotes.data;
 
-public class ForsmaticApiGetQuotaResponse {
+public class ForismaticApiGetQuotaResponse {
 
     private String quoteText;
     private String quoteAuthor;
@@ -8,7 +8,7 @@ public class ForsmaticApiGetQuotaResponse {
     private String senderLink;
     private String quoteLink;
 
-    public ForsmaticApiGetQuotaResponse(String quoteText, String quoteAuthor, String senderName, String senderLink, String quoteLink) {
+    public ForismaticApiGetQuotaResponse(String quoteText, String quoteAuthor, String senderName, String senderLink, String quoteLink) {
         this.quoteText = quoteText;
         this.quoteAuthor = quoteAuthor;
         this.senderName = senderName;

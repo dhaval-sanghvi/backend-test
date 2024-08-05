@@ -14,10 +14,10 @@ import java.net.http.HttpResponse;
 import org.junit.Test;
 
 import com.gremlin.quotes.client.FailedRequestException;
-import com.gremlin.quotes.client.ForsmaticClient;
-import com.gremlin.quotes.data.ForsmaticApiGetQuotaResponse;
+import com.gremlin.quotes.client.ForismaticClient;
+import com.gremlin.quotes.data.ForismaticApiGetQuotaResponse;
 
-public class ForsmaticClientTest {
+public class ForismaticClientTest {
 
 	@Test
 	public void failedRequestTest() throws IOException, InterruptedException, FailedRequestException {
@@ -35,7 +35,7 @@ public class ForsmaticClientTest {
 		when(httpResponse.body()).thenReturn(mockedHttpResponse);
 		when(httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString())).thenReturn(httpResponse);
 
-		ForsmaticClient quotelyClient = new ForsmaticClient(httpClient);
+		ForismaticClient quotelyClient = new ForismaticClient(httpClient);
 		Exception exception = assertThrows(FailedRequestException.class, () -> quotelyClient
 				.getQuoteResponse("https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en"));
 		assertEquals("Failure to get Quote", exception.getMessage());
@@ -58,8 +58,8 @@ public class ForsmaticClientTest {
 		when(httpResponse.body()).thenReturn(mockedHttpResponse);
 		when(httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString())).thenReturn(httpResponse);
 
-		ForsmaticClient quotelyClient = new ForsmaticClient(httpClient);
-		ForsmaticApiGetQuotaResponse fromCodeResponse = quotelyClient
+		ForismaticClient quotelyClient = new ForismaticClient(httpClient);
+		ForismaticApiGetQuotaResponse fromCodeResponse = quotelyClient
 				.getQuoteResponse("https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en");
 
 		assertEquals(fromCodeResponse.getQuoteText(), "You should hire Me.");
