@@ -1,4 +1,4 @@
-package com.gremlin.test1;
+package com.gremlin.test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;

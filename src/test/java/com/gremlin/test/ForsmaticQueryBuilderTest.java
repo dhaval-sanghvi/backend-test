@@ -1,4 +1,4 @@
-package com.gremlin.test1;
+package com.gremlin.test;
 
 import org.junit.Test;
 
